@@ -76,6 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -161,11 +162,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                     const Text(
-                      'Team Blue',
+                      'Team Red',
                       style: TextStyle(
-                        backgroundColor: Colors.lightBlue,
+                        backgroundColor: Color.fromARGB(255, 235, 129, 122),
                         fontSize: 24,
-                        color: Color.fromARGB(255, 8, 51, 87),
+                        color: Color.fromARGB(255, 189, 31, 20),
                         fontStyle: FontStyle.italic,
                       ),
                     ),
@@ -178,9 +179,22 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Text(
-                '${_counter > _counter2 ? "team Green has won the game" : (_counter < _counter2 ? "team Blue has won the game" : "the result is a draw")}'),
+                '${_counter > _counter2 ? "team Green has won the game" : (_counter < _counter2 ? "team Red has won the game" : "the result is a draw")}'),
             Text(
                 'they won by a margin of ${_counter > _counter2 ? _counter - _counter2 : (_counter < _counter2 ? _counter2 - _counter : 0)} points'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                    margin: const EdgeInsets.only(top: 20.0),
+                    child: Image.asset('assets/images/happyPear.png',
+                        width: 200, height: 200, fit: BoxFit.cover)),
+                Container(
+                    margin: const EdgeInsets.only(top: 20.0),
+                    child: Image.asset('assets/images/happyStrawberry.png',
+                        width: 200, height: 200, fit: BoxFit.cover)),
+              ],
+            ),
           ],
         ),
       ),
@@ -198,38 +212,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-/*
-InkWell(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: IconButton(
-                              onPressed: _incrementCounter,
-                              tooltip: 'free throw',
-                              icon: const Icon(Icons.exposure_minus_1),
-                              color: Colors.pink,
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: IconButton(
-                              onPressed: _incrementCounterByTwo,
-                              tooltip: 'two pointer',
-                              icon: const Icon(Icons.exposure_plus_1),
-                              color: Colors.pink,
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: IconButton(
-                              onPressed: _incrementCounterByThree,
-                              tooltip: 'three pointer',
-                              icon: const Icon(Icons.exposure_plus_2),
-                              color: Colors.pink,
-                            ),
-                          ),
-                        ),
-*/
